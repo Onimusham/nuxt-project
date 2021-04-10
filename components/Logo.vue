@@ -1,5 +1,5 @@
 <template>
-  <main class="-m-24 sm:-m-10 lg:m-32">
+  <main class="-m-24 sm:-m-10 m lg:m-32">
     <div class='flex pb-40 md:pb-12 lg:pb-52'>
       <img class="mx-auto w-60" src="@/assets/Tita-drinking.png" />
     </div>
