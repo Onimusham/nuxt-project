@@ -55,7 +55,7 @@
 // export default {}
 // console.log("teste#########################")
 import * as arquivojs from "@/assets/dados.json"
-let obj1=JSON.parse(arquivojs)
+
 console.log(arquivojs)
 // let fileJS=arquivojs
 
