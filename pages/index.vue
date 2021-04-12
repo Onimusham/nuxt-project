@@ -1,6 +1,31 @@
 <template>
+
   <div class="container">
-    <div>
+        <h1 class="title">Pipentrega</h1> 
+    <div class="search">Pesquise
+        <input id="tag" type="text" placeholder="o que quer comer...">
+    </div>    
+    <ul>
+      <li v-for="arquivojs of fileJS" :key="arquivojs">
+        {{arquivojs.key1}}
+      </li>
+      
+    </ul>
+    <!-- <div class="subtitle">
+      <a v-for="arquivojs of fileJS" :key="arquivojs" class="px-8 sm:px-10 lg:px-12 m-auto">
+            
+      </a> -->
+      
+    </div>
+     
+      
+      
+      
+    
+     
+
+    <!-- <div>
+
       <Logo />
       <h1 class="title">
         
@@ -14,36 +39,52 @@
         >
           Menu
         </a>
-        <!-- <a
+        <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
         >
           GitHub
-        </a> -->
+        </a>
       </div>
-    </div>
-  </div>
+    </div> -->
 </template>
 
-<script>
-export default {}
+// <script>
+// export default {}
+// console.log("teste#########################")
+import * as arquivojs from "@/assets/dados.json"
+let obj1=JSON.parse(arquivojs)
+console.log(arquivojs)
+// let fileJS=arquivojs
+
+import Vue from 'vue'
+
+  export default Vue.extend({
+    data() {
+      
+      const fileJS = arquivojs
+      return {
+        fileJS
+      }
+    }
+  })
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
+/*Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-/* .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.container {
+  margin: 50;
+  min-height: 300;
+  display:grid ;
+  justify-content:flex;
+  align-items: flex;
+  text-align: flex;
 }
 
 .title {
@@ -58,22 +99,29 @@ export default {}
     Arial,
     sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 200px;
+  font-weight: 100;
+  font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
+  font-weight: 100;
+  font-size: 20px;
   color: #526488;
   word-spacing: 5px;
-  padding-bottom: 15px;
-} */
-/* 
+  padding-top: 105px;
+}
+
 .links {
 
   padding-top: 250px;  
-} */
+}
+
+.search{
+  text-align: right;
+  font-weight: 200;
+  font-size: 30px;
+  color: #526488;
+}
 </style>
