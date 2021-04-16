@@ -1,22 +1,24 @@
 <template>
 
-  <div class="container">
-        <h1 class="title">Pipentrega</h1> 
-    <div class="search">Pesquise
-        <input id="tag" type="text" placeholder="o que quer comer...">
+  <div class="container w-full">
+      <div class="m-auto text-6xl">
+        Pipentrega
+      </div> 
+    <div class="m-2 py-5 flex">
+        <input class="border border-gray-500 w-full" id="tag" type="text" placeholder="qcq come!?">
     </div>    
-    <ul>
-      <li v-for="arquivojs of fileJS" :key="arquivojs">
-        {{arquivojs.key1}}
-      </li>
+    <div class="w-full">
+      <div class="m-1 h-20 px-10 border border-black" v-for="itemData of data" :key="itemData.name">
+        <Item :item="itemData"/>
+      </div>
       
-    </ul>
+    </div>
     <!-- <div class="subtitle">
       <a v-for="arquivojs of fileJS" :key="arquivojs" class="px-8 sm:px-10 lg:px-12 m-auto">
             
       </a> -->
       
-    </div>
+  </div>
      
       
       
@@ -54,19 +56,18 @@
 // <script>
 // export default {}
 // console.log("teste#########################")
-import * as arquivojs from "@/assets/dados.json"
+import rawData from "@/assets/dados.json"
 
-console.log(arquivojs)
+// console.log(arquivojs)
 // let fileJS=arquivojs
 
 import Vue from 'vue'
 
   export default Vue.extend({
     data() {
-      
-      const fileJS = arquivojs
+      const data = rawData
       return {
-        fileJS
+        data
       }
     }
   })
@@ -78,50 +79,19 @@ import Vue from 'vue'
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 50;
-  min-height: 300;
-  display:grid ;
-  justify-content:flex;
-  align-items: flex;
-  text-align: flex;
+::-webkit-input-placeholder {
+   text-align: center;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 100;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
 }
 
-.subtitle {
-  font-weight: 100;
-  font-size: 20px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-top: 105px;
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
 }
 
-.links {
-
-  padding-top: 250px;  
-}
-
-.search{
-  text-align: right;
-  font-weight: 200;
-  font-size: 30px;
-  color: #526488;
+:-ms-input-placeholder {  
+   text-align: center; 
 }
 </style>
